@@ -1,0 +1,19 @@
+public void PositionGenerator()
+    {
+        float goldenRatio = (1 + ((float)Math.Sqrt(5))) / 2; // The golden ratio is ratio of diagonal to side in the enclosed pentagon
+		float pentagonRadius = 4.5f;
+		float circleXOffset = 3;
+		float circleZOffset = 7;
+		//float pentagonDiagonal = totalDistance; // Set the diagonal as the distance b
+		//float pentagonSide = totalDistance / goldenRatio;
+		//float pentagonRadius = pentagonSide * ((float)Math.Sqrt(1 / (2 * (1 - Math.Cos(2 * Math.PI / 5)))));
+
+		pentagramPositions =new float[penta][]; 
+        for (int counter = 0; counter < 5; counter++)
+        {
+            float distanceX = circleXOffset + pentagonRadius * ((float)Math.Cos(((double)counter) * 2 * Math.PI / 5));
+            float distanceY = 0.0f;
+            float distanceZ = circleZOffset + pentagonRadius * ((float)Math.Sin(((double)counter) * 2 * Math.PI / 5));
+			pentagramPositions[counter] = new float[] { distanceX, distanceY, distanceZ };
+        }
+    }
